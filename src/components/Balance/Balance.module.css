@@ -1,0 +1,20 @@
+.balanceWrapper {
+    background: linear-gradient(to right, #3f0b7b, #56239f);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .label {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+  
+  .amount {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
