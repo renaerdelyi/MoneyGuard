@@ -8,7 +8,6 @@ import Balance from '../Balance/Balance';
 const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.logo}>Money Guard</div>
       <Balance />
 
       <nav className={styles.nav}>
