@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  LineChart,
+  AreaChart,
+  Area,
   Line,
   XAxis,
   YAxis,
@@ -8,19 +9,34 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-const data = [
-  { currency: 'USD', rate: 27.55 },
-  { currency: 'EUR', rate: 30.00 },
-];
+const CurrencyChart = ({ data }) => {
+  const formattedData = Object.entries(data).map(([currency, rates]) => ({
+    currency,
+    rate: parseFloat(rates.purchase), // sau .sale dacă vrei
+  }));
 
-const CurrencyChart = () => {
   return (
-    <div style={{ width: '100%', height: 120 }}>
+    <div style={{ width: '100%', height: 150 }}>
       <ResponsiveContainer>
-        <LineChart data={data}>
+        <AreaChart data={formattedData}>
+          <defs>
+            <linearGradient id="shadowGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#ff6600" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#000" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+
           <XAxis dataKey="currency" stroke="#ffffffaa" />
           <YAxis hide />
           <Tooltip />
+
+          <Area
+            type="monotone"
+            dataKey="rate"
+            stroke="none"
+            fill="url(#shadowGradient)"
+          />
+
           <Line
             type="monotone"
             dataKey="rate"
@@ -29,7 +45,7 @@ const CurrencyChart = () => {
             dot={{ r: 4, stroke: '#fff', strokeWidth: 2, fill: '#ff6600' }}
             activeDot={{ r: 6 }}
           />
-        </LineChart>
+        </AreaChart>
       </ResponsiveContainer>
     </div>
   );
