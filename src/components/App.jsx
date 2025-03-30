@@ -1,16 +1,11 @@
+import React from 'react';
+import Sidebar from './Sidebar/Sidebar';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div style={{ display: 'flex', height: '100vh' }}>
+      <Sidebar />
+      <div style={{ flex: 1, background: '#f5f5f5' }}></div>
     </div>
   );
 };

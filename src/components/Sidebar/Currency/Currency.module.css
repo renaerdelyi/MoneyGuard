@@ -1,0 +1,43 @@
+.currencyContainer {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+  }
+  
+  .currencyTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .currencyTable th {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    opacity: 0.8;
+    padding: 8px;
+  }
+  
+  .currencyTable td {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+  }
+  
+  .currencyTableHeader {
+    background-color: rgba(255, 255, 255, 0.08); 
+    height: 48px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .currencyTableHeader th {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #fbfbfb;
+    padding: 12px;
+  }
+  
