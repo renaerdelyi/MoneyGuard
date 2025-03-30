@@ -1,27 +1,35 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg';
-import { ReactComponent as StatsIcon } from '../../assets/icons/statistics.svg';
-import styles from './Sidebar.module.css';
 import Balance from './Balance/Balance';
 import Currency from './Currency/Currency';
-
+import Icon from '../Icon/Icon';
+import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
-      
       <nav className={styles.nav}>
-        <NavLink to="/home" className={({ isActive }) => isActive ? styles.active : ''}>
-          <HomeIcon className={styles.icon} />
-          <span>Home</span>
+        <NavLink
+          to="/home"
+          className={({ isActive }) =>
+            isActive ? `${styles.link} ${styles.active}` : styles.link
+          }
+        >
+          <Icon name="homepage" className={styles.icon} />
+          <span className={styles.navText}>Home</span>
         </NavLink>
 
-        <NavLink to="/statistics" className={({ isActive }) => isActive ? styles.active : ''}>
-          <StatsIcon className={styles.icon} />
-          <span>Statistics</span>
+        <NavLink
+          to="/statistics"
+          className={({ isActive }) =>
+            isActive ? `${styles.link} ${styles.active}` : styles.link
+          }
+        >
+          <Icon name="statistics" className={styles.icon} />
+          <span className={styles.navText}>Statistics</span>
         </NavLink>
       </nav>
+
       <Balance />
       <Currency />
     </aside>

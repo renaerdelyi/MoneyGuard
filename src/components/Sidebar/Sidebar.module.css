@@ -1,42 +1,56 @@
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #2e005f, #450278);
-    color: white;
-    padding: 20px;
-    width: 250px;
-    min-height: 100vh;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .nav a {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: 0.3s;
-  }
-  
-  .nav a:hover {
-    opacity: 0.8;
-  }
-  
-  .active {
-    font-weight: bold;
-    border-left: 4px solid orange;
-    padding-left: 10px;
-  }
-  
-  .icon {
-    width: 24px;
-    margin-right: 12px;
-    flex-shrink: 0;
-    display: block;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #2e005f, #450278);
+  color: white;
+  padding: 20px;
+  width: 250px;
+  min-height: 100vh;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 12px;
+  margin-bottom: 20px;
+  transition: opacity 0.3s;
+  color: #fbfbfb;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.active {
+  font-weight: bold;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  display: inline-block;
+}
+.active .icon {
+  fill: red;
+}
+
+.navText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fbfbfb;
+}

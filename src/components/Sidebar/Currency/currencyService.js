@@ -19,7 +19,6 @@ export const fetchCurrencyData = async () => {
 
     const response = await fetch(API_URL);
     const result = await response.json();
-    console.log('API result:', result);
 
 
     const usdRate = result?.rates?.USD;
