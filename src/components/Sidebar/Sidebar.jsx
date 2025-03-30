@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg';
 import { ReactComponent as StatsIcon } from '../../assets/icons/statistics.svg';
 import styles from './Sidebar.module.css';
-import Balance from '../Balance/Balance';
-import Currency from '../Currency/Currency';
+import Balance from './Balance/Balance';
+import Currency from './Currency/Currency';
+
 
 const Sidebar = () => {
   return (
