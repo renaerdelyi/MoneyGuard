@@ -31,7 +31,7 @@ const Currency = () => {
     <div className={styles.currencyContainer}>
       <table className={styles.currencyTable}>
         <thead>
-          <tr>
+          <tr className={styles.currencyTableHeader}>
             <th>Currency</th>
             <th>Purchase</th>
             <th>Sale</th>
@@ -47,8 +47,7 @@ const Currency = () => {
           ))}
         </tbody>
       </table>
-      <CurrencyChart />
-
+      <CurrencyChart data={currency} />
     </div>
   );
 };

@@ -27,3 +27,17 @@
     padding: 10px;
   }
   
+  .currencyTableHeader {
+    background-color: rgba(255, 255, 255, 0.08); 
+    height: 48px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .currencyTableHeader th {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #fbfbfb;
+    padding: 12px;
+  }
+  
