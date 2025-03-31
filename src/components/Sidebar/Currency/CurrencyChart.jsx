@@ -1,54 +1,81 @@
-import React from 'react';
-import {
-  AreaChart,
-  Area,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from 'recharts';
+// import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+// import { Doughnut } from "react-chartjs-2";
+// import { useSelector } from "react-redux";
+// import {
+//   selectCategoriesSummary,
+//   selectPeriodTotal,
+// } from "../../../redux/Auth/selectors";
+// import styles from "./CurrencyChart.module.css";
 
-const CurrencyChart = ({ data }) => {
-  const formattedData = Object.entries(data).map(([currency, rates]) => ({
-    currency,
-    rate: parseFloat(rates.purchase), // sau .sale dacă vrei
-  }));
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
-  return (
-    <div style={{ width: '100%', height: 150 }}>
-      <ResponsiveContainer>
-        <AreaChart data={formattedData}>
-          <defs>
-            <linearGradient id="shadowGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#ff6600" stopOpacity={0.3} />
-              <stop offset="95%" stopColor="#000" stopOpacity={0} />
-            </linearGradient>
-          </defs>
+// const options = {
+//   borderWidth: 0,
+//   cutout: "72%",
+// };
 
-          <XAxis dataKey="currency" stroke="#ffffffaa" />
-          <YAxis hide />
-          <Tooltip />
+// const plugins = [
+//   {
+//     id: "shadow",
+//     beforeDraw: function (chart) {
+//       const { ctx } = chart;
+//       ctx.shadowColor = "rgba(0,0,0,1)";
+//       ctx.shadowOffsetX = 0;
+//       ctx.shadowOffsetY = 0;
+//       ctx.shadowBlur = 8;
+//     },
+//   },
+// ];
 
-          <Area
-            type="monotone"
-            dataKey="rate"
-            stroke="none"
-            fill="url(#shadowGradient)"
-          />
+// const colors = [
+//   "#fed057",
+//   "#ffd8d0",
+//   "#fd9498",
+//   "#c5baff",
+//   "#6e78e8",
+//   "#4a56e2",
+//   "#81e1ff",
+//   "#24cca7",
+//   "#00ad84",
+// ];
 
-          <Line
-            type="monotone"
-            dataKey="rate"
-            stroke="#ff6600"
-            strokeWidth={2}
-            dot={{ r: 4, stroke: '#fff', strokeWidth: 2, fill: '#ff6600' }}
-            activeDot={{ r: 6 }}
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    </div>
-  );
-};
+// const CurrencyChart = () => {
+//   const periodTotal = useSelector(selectPeriodTotal);
+//   const transactionCategories = useSelector(selectCategoriesSummary);
 
-export default CurrencyChart;
+//   let categories = [];
+
+//   if (periodTotal > 0) {
+//     categories = transactionCategories.map((category, index) => ({
+//       name: category.name,
+//       total: category.total,
+//       color: colors[index],
+//     }));
+//   }
+
+//   const categoriesTotal = categories.map((c) => c.total);
+//   const categoriesColor = categories.map((c) => c.color);
+
+//   const data = {
+//     labels: [],
+//     datasets: [
+//       {
+//         data: periodTotal === 0 ? [1] : categoriesTotal,
+//         backgroundColor: periodTotal === 0 ? ["#00000026"] : categoriesColor,
+//       },
+//     ],
+//   };
+
+//   return (
+//     <div className={styles.container}>
+//       <div className={styles.chartContainer}>
+//         <div className={styles.chart}>
+//           <Doughnut data={data} options={options} plugins={plugins} />
+//           <p className={styles.insideText}>${periodTotal.toFixed(2)}</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CurrencyChart;

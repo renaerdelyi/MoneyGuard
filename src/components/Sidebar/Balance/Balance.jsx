@@ -1,14 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux'; // <- Șterge sau comentează linia
+// import { selectBalance } from '../../../redux/Auth/selectors';
 import styles from './Balance.module.css';
 
 const Balance = () => {
-  const totalBalance = useSelector(state => state.finance.totalBalance);
+  // Temporar — valoare statică
+  const balance = 1234.56;
 
   return (
     <div className={styles.balanceWrapper}>
-      <p className={styles.label}>YOUR BALANCE</p>
-      <p className={styles.amount}>₴ {totalBalance?.toLocaleString('en-US') || '0.00'}</p>
+      <p className={styles.label}>Your Balance</p>
+      <p className={styles.amount}>€{balance.toFixed(2)}</p>
     </div>
   );
 };

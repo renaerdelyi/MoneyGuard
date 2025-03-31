@@ -1,21 +1,35 @@
 .balanceWrapper {
-  background: linear-gradient(to right, #3f0b7b, #56239f);
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 0;
+  border-radius: 8px;
+  background: rgba(82, 59, 126, 0.6);
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  padding: 8px 74px 12px 32px;
+  width: 280px;
+  height: 80px;
   color: white;
-  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .balanceWrapper {
+    padding: 8px 122px 12px 40px;
+    width: 336px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .balanceWrapper {
+    width: 100%;
+  }
 }
 
 .label {
   font-size: 12px;
-  opacity: 0.5;
-  margin-bottom: 6px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .amount {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
 }

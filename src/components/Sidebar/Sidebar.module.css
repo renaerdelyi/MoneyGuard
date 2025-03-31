@@ -5,8 +5,8 @@
   background: linear-gradient(to bottom, #2e005f, #450278);
   color: #fff;
   padding: 24px 20px;
-  width: 260px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
 }
 
 .navContainer {
