@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/MoneyGuard/static/css/main.98da9a1e.css",
-    "main.js": "/MoneyGuard/static/js/main.30c36f4c.js",
+    "main.css": "/MoneyGuard/static/css/main.a0d6ba80.css",
+    "main.js": "/MoneyGuard/static/js/main.e4a3bcab.js",
     "static/media/sprite.svg": "/MoneyGuard/static/media/sprite.555f92731d88345242018983adf74195.svg",
     "index.html": "/MoneyGuard/index.html",
-    "main.98da9a1e.css.map": "/MoneyGuard/static/css/main.98da9a1e.css.map",
-    "main.30c36f4c.js.map": "/MoneyGuard/static/js/main.30c36f4c.js.map"
+    "main.a0d6ba80.css.map": "/MoneyGuard/static/css/main.a0d6ba80.css.map",
+    "main.e4a3bcab.js.map": "/MoneyGuard/static/js/main.e4a3bcab.js.map"
   },
   "entrypoints": [
-    "static/css/main.98da9a1e.css",
-    "static/js/main.30c36f4c.js"
+    "static/css/main.a0d6ba80.css",
+    "static/js/main.e4a3bcab.js"
   ]
 }
