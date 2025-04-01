@@ -1,0 +1,145 @@
+.header {
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 2px 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        height: 80px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        width: 1280px;
+        margin: auto;
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        list-style: none;
+        font-family: Poppins;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: right;
+
+    @media (min-width: 768px) {
+        padding: 25px 32px;
+    }
+
+    @media (min-width: 1280px) {
+        padding: 25px 16px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .text::after {
+        content: '';
+        border: 0.5px solid;
+        margin-left: 12px;
+    }
+}
+
+.wrap {
+    display: flex;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.divider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 0 12px;
+    align-self: center;
+    height: 24px;
+        top: 25px;
+        left: 667px;
+        border-width: 1px;
+}
+.btn {
+    display: flex;
+    background: inherit;
+    padding: 0 0 0 8px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    border: none;
+    box-shadow: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    appearance: none;
+
+    @media (min-width: 768px) {
+        padding: 0;
+    }
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fbfbfb;;
+    cursor: pointer;
+    
+}
+
+.exit {
+    width: 18px;
+    height: 18px;
+    fill: rgba(255, 255, 255, 0.6);
+
+    @media (min-width: 768px) {
+        margin: 0 8px 0 12px;
+    }
+}
+
+.exit:hover,
+.exit:focus {
+    fill: #fbfbfb;;
+    cursor:pointer;
+}
+
+.btn:focus .exit {
+    fill: #ffffff;
+}
+
+.btn:hover .exit {
+        fill: #ffffff;
+    }
+
+.icon_wrap {
+    padding: 12px 20px;
+
+    @media (min-width: 768px) {
+        padding: 16px 32px;
+    }
+
+    @media (min-width: 1280px) {
+        padding: 16px;
+    }
+}
+
+.icon_mob {
+    width: 86px;
+    height: 36px;
+}
+
+.icon_tab_desk {
+    width: 115px;
+    height: 48px;
+}

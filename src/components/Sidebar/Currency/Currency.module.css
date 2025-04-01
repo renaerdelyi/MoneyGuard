@@ -1,43 +1,171 @@
-.currencyContainer {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 100%;
-    color: white;
+.tableWrapper {
+  position: relative;
+  background-color: rgba(74, 86, 226, 0.1);
+  width: 320px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .tableWrapper {
+    min-width: 336px;
+    margin: 0;
   }
-  
-  .currencyTable {
+}
+
+@media only screen and (min-width: 1280px) {
+  .tableWrapper {
     width: 100%;
-    border-collapse: collapse;
+    max-height: 395px;
+    height: 350px;
+  }
+}
+
+.graphWrapper {
+  position: relative;
+  width: 100%;
+  top: -6px;
+}
+
+.graphWrapper::before,
+.graphWrapper::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #563eaf;
+  border: solid 1px #ff868d;
+}
+
+.graphWrapper::before {
+  left: 39px;
+  top: 21px;
+}
+
+.graphWrapper::after {
+  left: 242px;
+  top: -2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .graphWrapper::before {
+    left: 42px;
+    top: 21px;
+  }
+  .graphWrapper::after {
+    left: 254px;
+    top: -2px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .graphWrapper {
+    top: 26px;
+  }
+  .graphWrapper::before {
+    left: 58px;
+    top: 29px;
+    width: 9px;
+    height: 9px;
+  }
+  .graphWrapper::after {
+    left: 364px;
+    top: -4px;
+    width: 9px;
+    height: 9px;
+  }
+}
+
+.table {
+  width: 100%;
+  font-size: 16px;
+  line-height: normal;
+  border-collapse: collapse;
+  padding-left: 20px;
+}
+
+.thead {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.th {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  width: 33%;
+  padding-left: 20px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .th:first-child {
+    padding-left: 62px;
+  }
+
+  .th:last-child {
+    padding-right: 111px;
+  }
+}
+
+.td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 30%;
+  padding-left: 25px;
+}
+
+.td:last-child {
+  padding-left: 46px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .td {
     text-align: center;
   }
-  
-  .currencyTable th {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: white;
-    opacity: 0.8;
-    padding: 8px;
+
+  .td:first-child {
+    padding-left: 62px;
   }
-  
-  .currencyTable td {
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px;
+
+  .td:last-child {
+    padding-right: 131px;
   }
-  
-  .currencyTableHeader {
-    background-color: rgba(255, 255, 255, 0.08); 
-    height: 48px;
-    border-radius: 8px 8px 0 0;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+}
+
+.gradientWave {
+  width: 100%;
+  position: absolute;
+  top: 6px;
+}
+
+@media only screen and (min-width: 1280px) {
+  .gradientWave {
+    top: 20px;
   }
-  
-  .currencyTableHeader th {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    color: #fbfbfb;
-    padding: 12px;
-  }
-  
+}
+
+.graphUsd {
+  position: absolute;
+  left: 48px;
+  top: 8px;
+  color: #ff868d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.graphEur {
+  position: absolute;
+  left: 352px;
+  top: -27px;
+  color: #ff868d;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
