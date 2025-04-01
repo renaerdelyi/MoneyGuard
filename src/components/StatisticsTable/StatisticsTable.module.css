@@ -1,0 +1,147 @@
+*,
+table,
+tbody,
+tr,
+th,
+td {
+  box-sizing: border-box;
+  padding: 0;
+}
+.tableContainer {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
+  margin: 0 20px;
+}
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(82, 59, 126, 0.6);
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+}
+.category p {
+  color: var(--white);
+  font-size: 16px;
+  font-family: 'Poppins-SemiBold', sans-serif;
+}
+.listContainer {
+  width: 100%;
+}
+
+.listContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background: #7d31a0;
+  border-radius: 8px;
+}
+
+.listContainer::-webkit-scrollbar-thumb:hover {
+  background: #942cc5;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px 14px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.41);
+}
+
+.item div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.item span {
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+}
+
+.item p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.transactions {
+  color: var(--white);
+  font-family: 'Poppins-SemiBold', sans-serif;
+  padding: 20px 28px 8px;
+  text-align: center;
+}
+
+.expenses {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 27px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Poppins-SemiBold', sans-serif;
+}
+.expenses p {
+  color: #ff868d;
+}
+
+.income {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 27px;
+  padding-bottom: 15px;
+  color: var(--white);
+  font-size: 14px;
+  font-family: 'Poppins-SemiBold', sans-serif;
+}
+.income p {
+  color: #ffb627;
+}
+
+@media only screen and (min-width: 768px) {
+  .listContainer {
+    max-height: auto;
+    overflow-y: hidden;
+  }
+  .tableContainer {
+    width: 336px;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .listContainer {
+    height: 100%;
+    max-height: calc(100vh - 396px);
+  }
+  .tableContainer {
+    width: 395px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .income {
+    padding-bottom: 13px;
+  }
+}
