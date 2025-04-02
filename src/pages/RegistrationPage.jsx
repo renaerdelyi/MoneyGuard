@@ -1,4 +1,4 @@
-import RegistrationForm from "../components/Auth/RegistrationForm";
+import RegistrationForm from "../components/Forms/RegistrationForm";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/UI/Btn/Btn";
 import styles from './RegistrationPage.module.css'
