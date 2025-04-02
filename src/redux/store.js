@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import authReducer from '../redux/Auth/authSlice';
+import authReducer from './auth/authSlice';
 import financeReducer from './financeSlice';
 
 const persistConfig = {
