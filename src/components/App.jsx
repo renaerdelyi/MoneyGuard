@@ -2,22 +2,22 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './redux/store';
+import { store, persistor } from '../redux/store';
 
-import Sidebar from './components/Sidebar/Sidebar';
-import Header from './components/Header/Header';
-import Currency from './components/Sidebar/Currency/Currency';
+import Sidebar from './Sidebar/Sidebar';
+import Header from './Header/Header';
+import Currency from './Sidebar/Currency/Currency';
 
-import PrivateRoute from './redux/routes/PrivateRoute';
-import LoginPage from './pages/LoginPage';
-import RegistrationPage from './pages/RegistrationPage';
-import DashboardPage from './pages/DashboardPage';
+import PrivateRoute from '../redux/routes/PrivateRoute';
+import LoginPage from '../pages/LoginPage';
+import RegistrationPage from '../pages/RegistrationPage';
+import DashboardPage from '../pages/DashboardPage';
 
 export const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router>
+        
           <Header />
           <div style={{ display: 'flex', height: 'calc(100vh - 60px)' }}>
             <Sidebar />
@@ -41,7 +41,7 @@ export const App = () => {
               </Routes>
             </div>
           </div>
-        </Router>
+        
       </PersistGate>
     </Provider>
   );

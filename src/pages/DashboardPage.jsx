@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/auth/authSlice";
+import { logout } from "../redux/Auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/UI/Btn/Btn";
 

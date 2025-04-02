@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/Auth/LoginForm";
-import { loginSuccess } from "../redux/auth/authSlice";
+import { loginSuccess } from "../redux/Auth/authSlice";
 import axios from "axios";
 import RegistrationForm from "../components/Auth/RegistrationForm";
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
       const response = await axios.post(
         isLogin
           ? "https://wallet.b.goit.study/api/auth/sign-in"
-          : "https://wallet.b.goit.study/api/auth/register",
+          : "https://wallet.b.goit.study/api/auth/sign-up",
         values
       );
       dispatch(

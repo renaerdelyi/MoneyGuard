@@ -32,10 +32,10 @@ const RegistrationForm = ({ onSubmit, onSwitchToLogin }) => {
         .required("Confirmarea parolei este obligatorie"),
     }),
     onSubmit: async (values, { setSubmitting }) => {
-      setNotification({ message: "", type: "" }); // Resetăm notificarea
+      setNotification({ message: "", type: "" }); 
 
       try {
-        const response = await fetch("https://example.com/api/register", {
+        const response = await fetch("https://example.com/api/auth/sign-up", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(values),
