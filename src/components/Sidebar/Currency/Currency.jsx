@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useMediaQuery } from "react-responsive";
 import CurrencyChart from "./CurrencyChart";
 import styles from "./Currency.module.css";
 

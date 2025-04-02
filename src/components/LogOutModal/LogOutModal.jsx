@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import FormButton from '../FormButton/FormButton';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { logoutThunk } from '../../redux/Auth/operations';
+import { logoutThunk } from '../../redux/Operations/operations';
 import Icon from '../Icon/Icon';
 import useMedia from '../../hooks/useMedia';
 
