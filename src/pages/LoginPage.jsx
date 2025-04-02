@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import LoginForm from "../components/Auth/LoginForm";
-import { loginSuccess } from "../redux/Auth/authSlice";
+import LoginForm from "../components/Forms/LoginForm";
+import { loginSuccess } from "../redux/Auth/authSlice"
 import axios from "axios";
-import RegistrationForm from "../components/Auth/RegistrationForm";
+import RegistrationForm from "../components/Forms/RegistrationForm";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
