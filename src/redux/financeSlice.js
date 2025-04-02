@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  totalBalance: 24000, // poți schimba valoarea pentru test
+  totalBalance: 24000, 
 };
 
 const financeSlice = createSlice({
