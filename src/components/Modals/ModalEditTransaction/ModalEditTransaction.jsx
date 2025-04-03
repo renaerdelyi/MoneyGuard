@@ -7,7 +7,7 @@ import {
   Gradient,
   StyledModal,
 } from './ModalEditTransaction.styled';
-// import { Header } from '../../Dashboard/Header/Header';
+import { Header } from '../../Dashboard/Header/Header';
 import { useMediaQuery } from 'react-responsive';
 
 function ModalEditTransaction({ closeModal, children }) {
