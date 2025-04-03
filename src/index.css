@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('./styles/globalVars.css');
+@import url('./styles/fonts.css');
+@import url('modern-normalize');
 
 body {
   margin: 0;
@@ -14,6 +17,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@import url('./styles/globalVars.css');
-@import url('./styles/fonts.css');
-@import url('modern-normalize');
+

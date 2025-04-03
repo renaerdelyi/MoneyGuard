@@ -1,53 +1,65 @@
-import React from 'react';
+
+import React, { Suspense, lazy, useEffect } from 'react'; 
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from '../redux/store';
+import { PrivateRoute } from '../Routes/PrivateRoute'; 
+import { RestrictedRoute } from '../Routes/RestrictedRoute'; 
+import { SpinnerLoader } from './Spinner/Spinner'; 
+import ErrorBoundary from '../ErrorBoundary'; 
+const LoginPage = lazy(() => import('../pages/LoginPage'));
+const RegistrationPage = lazy(() => import('../pages/RegistrationPage'));
+const DashboardPage = lazy(() => import('../pages/DashboardPage')); 
 
-import Sidebar from './Sidebar/Sidebar';
-import Header from './Header/Header'; 
-import TransactionsList from '../components/TransactionList/TransactionList';
-;  
 
-import Currency from './Sidebar/Currency/Currency';
 
-import PrivateRoute from '../redux/routes/PrivateRoute';
-import LoginPage from '../pages/LoginPage';
-import RegistrationPage from '../pages/RegistrationPage';
-import DashboardPage from '../pages/DashboardPage';
+
 
 export const App = () => {
+ 
+
+  
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        
-          <Header />
-          <div style={{ display: 'flex', height: 'calc(100vh - 60px)' }}>
-            <Sidebar />
-            <div style={{ flex: 1, background: '#f5f5f5', padding: '20px' }}>
-              <Routes>
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegistrationPage />} />
-                <Route element={<PrivateRoute />}>
-                  <Route path="/dashboard" element={<DashboardPage />} />
-                  <Route path="/currency" element={<Currency />} />
-                  <Route
-                    path="/home"
-                    element={<div><h2>Lista tranzacțiilor (în curând)</h2></div>}
-                  />
-                  <Route
-                    path="/statistics"
-                    element={<h2>Statistici (în curând)</h2>}
-                  />
-                </Route>
-              </Routes>
-            </div>
-          </div>
-        
-      </PersistGate>
-    </Provider>
+    <ErrorBoundary> {/* Probabil vrei un ErrorBoundary aici */}
+      <Suspense fallback={<SpinnerLoader />}> {/* Folosește Suspense pt. lazy loading */}
+        <Routes>
+          {/* Rută publică principală - redirecționează spre login sau dashboard */}
+          <Route path="/" element={
+            
+             <PrivateRoute component={<DashboardPage />} redirectTo="/login" />
+          } />
+
+          {/* Rute restricționate (nu sunt accesibile dacă ești logat) */}
+          <Route
+            path="/login"
+            element={<RestrictedRoute component={<LoginPage />} redirectTo="/" />} // Folosește RestrictedRoute corect
+          />
+          <Route
+            path="/register"
+            element={<RestrictedRoute component={<RegistrationPage />} redirectTo="/" />} // Folosește RestrictedRoute corect
+          />
+
+          {/* Rute private (accesibile doar dacă ești logat) */}
+          {/* DashboardPage acționează ca layout și va folosi <Outlet> pentru a randa /home, /statistics etc. */}
+          <Route
+            path="/dashboard" 
+            element={<PrivateRoute component={<DashboardPage />} redirectTo="/login" />} 
+          >
+              {/* Definește aici ce se randează ÎN <Outlet /> din DashboardPage */}
+              {/* Probabil vrei ca /dashboard să redirecteze spre /dashboard/home */}
+              <Route index element={<Navigate to="/dashboard/home" replace />} />
+              <Route path="home" element={<div>Home Content Placeholder</div>} /> {/* TODO: Înlocuiește cu componenta Home */}
+              <Route path="statistics" element={<div>Statistics Content Placeholder</div>} /> {/* TODO: Înlocuiește cu componenta Statistics */}
+              {/* Adaugă alte rute imbricate aici (ex: currency) */}
+              {/* <Route path="currency" element={<Currency />} /> */}
+          </Route>
+
+          {/* Catch-all pentru rute inexistente */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+
+        </Routes>
+      </Suspense>
+      {/* ToastContainer poate fi pus aici dacă folosești notificări globale */}
+      {/* <ToastContainer autoClose={3000} theme="colored" /> */}
+    </ErrorBoundary>
   );
 };
-
 

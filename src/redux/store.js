@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer from './auth/authSlice';
 import financeReducer from './financeSlice';
@@ -12,7 +12,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-
 import { persistedStatisticsReducer } from '../redux/statistics/slice';
 import persistedTransactionsReducer from './transactions/slice';
 import { modalReducer } from '../redux/modal/slice';
