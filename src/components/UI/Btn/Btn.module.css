@@ -1,0 +1,45 @@
+.button {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .primary {
+    color: rgba(251, 251, 251, 1);
+    background-image: none;
+    background: linear-gradient(
+      96.76deg,
+      #ffc727 -16.42%,
+      #9e40ba 97.04%,
+      #7000ff 150.71%
+    );
+    transition: all 1s ease 0s;
+  }
+  
+  .secondary {
+    color: #623f8b;
+    background: #fcfcfc;
+  }
+  
+  .formbutton {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    height: 50px;
+    top: 445px;
+    left: 489px;
+    border-radius: 20px;
+  }
+  
