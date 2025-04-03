@@ -1,0 +1,21 @@
+.dashboard {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .dashboard {
+    gap: 16px;
+    flex-direction: row;
+    width: 336px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .dashboard {
+    gap: 32px;
+    width: 395px;
+  }
+}

@@ -1,0 +1,27 @@
+:root {
+  --purple: #734aef;
+
+  --background: #101010;
+  --table-head-background: rgba(82, 59, 126, 0.6);
+  --Small-Form-color: linear-gradient(
+    0deg,
+    rgba(83, 61, 186, 0.7) 0%,
+    rgba(80, 48, 154, 0.7) 43.14%,
+    rgba(106, 70, 165, 0.52) 73.27%,
+    rgba(133, 93, 175, 0.13) 120.03%
+  );
+  --button-gradient: linear-gradient(
+    97deg,
+    #ffc727 -16.42%,
+    #9e40ba 97.04%,
+    #7000ff 150.71%
+  );
+  --dashboard-text: #ff868d;
+  --text-button: #623f8b;
+  --white: #fbfbfb;
+  --transp-10: rgba(255, 255, 255, 0.1);
+  --transp-20: rgba(255, 255, 255, 0.2);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --yellow: #ffb627;
+}
