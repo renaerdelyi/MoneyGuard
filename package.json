@@ -21,6 +21,7 @@
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.55.0",
+    "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
     "react-loader-spinner": "^6.1.6",
     "react-password-strength-bar": "^0.4.1",
@@ -60,5 +61,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/hoist-non-react-statics": "^3.3.6",
+    "@types/react": "^19.1.0",
+    "@types/semver": "^7.7.0"
   }
 }

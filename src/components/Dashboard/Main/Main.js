@@ -7,7 +7,6 @@ export const Main = () => {
     <MainStyled>
       {/* <DinamicSidebar /> */}
       {/* <TransactionsTable /> */}
-      <p style={{ color: 'white' }}>✅ Main component funcționează!</p>
     </MainStyled>
   );
 };
