@@ -1,13 +1,10 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
 import { TransactionsTableStyled } from './TransactionsTableStyled';
 
 export const TransactionsTable = () => {
   return (
     <TransactionsTableStyled>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
+      <h2 style={{ color: 'white' }}>🔍 Tabelul de tranzacții</h2>
+      <p style={{ color: 'white' }}>Aici vor apărea tranzacțiile tale...</p>
     </TransactionsTableStyled>
   );
 };

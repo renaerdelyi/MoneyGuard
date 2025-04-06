@@ -1,0 +1,46 @@
+/* .container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .chartContainer {
+    padding-bottom: 32px;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .chart {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin-top: 8px;
+    padding: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    .chart {
+      width: 336px;
+      height: 336px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .chart {
+      width: 288px;
+      height: 288px;
+    }
+  }
+  
+  .insideText {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    color: var(--white, #fbfbfb);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+   */
