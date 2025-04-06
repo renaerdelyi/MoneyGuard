@@ -5,6 +5,7 @@ import LoginForm from '../components/Forms/LoginForm';
 import RegistrationForm from '../components/Forms/RegistrationForm';
 import { loginSuccess } from '../redux/auth/authSlice';
 import axios from 'axios';
+import s from './LoginPage.module.css'
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -47,9 +48,9 @@ const LoginPage = () => {
   };
 
   const handleSwitchToRegister = () => {
-    setIsLogin(false);
-    setErrorMessage('');
+    navigate('/register');
   };
+  
 
   const handleSwitchToLogin = () => {
     setIsLogin(true);
@@ -57,13 +58,13 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
+    <div className={s.loginPage}>
       {errorMessage && (
         <div style={{ color: 'red', marginBottom: '1rem' }}>
           {errorMessage}
         </div>
       )}
-
+  
       {isLogin ? (
         <LoginForm
           onSubmit={handleSubmit}
@@ -75,6 +76,14 @@ const LoginPage = () => {
           onSwitchToLogin={handleSwitchToLogin}
         />
       )}
+  
+      {/* 🔵 Elipse decorative */}
+      <div className={s.ellipse16}></div>
+      <div className={s.ellipse18}></div>
+      <div className={s.ellipse14}></div>
+      <div className={s.ellipse17}></div>
+      <div className={s.ellipse15}></div>
+      <div className={s.ellipse19}></div>
     </div>
   );
 };
