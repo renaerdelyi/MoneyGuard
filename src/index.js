@@ -5,17 +5,15 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import { store, persistor } from './redux/store'; // Aici adaugi persistor-ul importat
+import { store, persistor } from './redux/store';
 import { App } from 'components/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider basename="/MoneyGuard">
+    <HelmetProvider>
       <ReduxProvider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {' '}
-          {/* Aici folosești persistor-ul */}
-          <BrowserRouter basename="/MoneyGuard">
+          <BrowserRouter>
             <App />
           </BrowserRouter>
         </PersistGate>
