@@ -25,7 +25,7 @@ const username = user?.username || 'Anonymous';
                 </Link>
 
                 <ul className={s.wrapper}>
-                    <li>Hello, {username} </li>
+                    <li className={s.usernameLi}>Hello, {username} </li>
                     <li className={s.divider} />
                     <li>
                         <div className={s.wrap}>
