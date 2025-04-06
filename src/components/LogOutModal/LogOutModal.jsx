@@ -7,10 +7,13 @@ import { useDispatch } from 'react-redux';
 import { logoutThunk } from '../../redux/Operations/operations';
 import Icon from '../Icon/Icon';
 import useMedia from '../../hooks/useMedia';
+import { useNavigate } from 'react-router-dom';
+import { persistor } from '../../redux/store';
 
 const LogOutModal = ({ closeModal }) => {
     const dispatch = useDispatch();
     const { isMobile } = useMedia();
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -53,7 +56,18 @@ const LogOutModal = ({ closeModal }) => {
                 <p>Are you sure you want to log out?</p>
 
                 <div className={styles.buttonsWrapper}>
-                    <FormButton type={'button'} text={'Logout'} variant={'multiColorButton'} handlerFunction={() => dispatch(logoutThunk())} />
+                <FormButton
+  type="button"
+  text="Logout"
+  variant="multiColorButton"
+  handlerFunction={() => {
+    dispatch(logoutThunk()).then(() => {
+      persistor.purge();       
+      closeModal();            
+      navigate('/login');      
+    });
+  }}
+/>
                     <FormButton type={'button'} text={'cancel'} variant={'whiteButton'} handlerFunction={() => closeModal()} />
                 </div>
             </div>
