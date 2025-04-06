@@ -10,7 +10,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useMediaQuery } from 'react-responsive';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Header } from '../../Dashboard/Header/Header';
+import Header from 'components/Header/Header';
 import {
   CloseBtn,
   CommentInputStyled,

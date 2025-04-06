@@ -2,27 +2,24 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from '../pages/LoginPage';
 import DashboardPage from '../pages/DashboardPage';
+import StatisticsPage from 'pages/StatisticsPage/Statistics';
+import HomePage from 'pages/HomePage/Home';
+
 
 export const App = () => {
   return (
     <Routes>
-      {/* ✅ Login default */}
+      {/* 🔐 Pagina de autentificare */}
       <Route path="/" element={<LoginPage />} />
 
-      {/* ✅ Dashboard Layout + subrute */}
+      {/* 🧱 Dashboard layout + rute imbricate */}
       <Route path="/dashboard" element={<DashboardPage />}>
         <Route index element={<Navigate to="home" replace />} />
-        <Route
-          path="home"
-          element={<div style={{ color: 'white' }}>🏠 Dashboard Home</div>}
-        />
-        <Route
-          path="statistics"
-          element={<div style={{ color: 'white' }}>📊 Dashboard Statistics</div>}
-        />
+        <Route path="home" element={<HomePage />} />
+        <Route path="statistics" element={<StatisticsPage />} />
       </Route>
 
-      {/* 🧼 Catch-all: redirecționează către login */}
+      {/* 🔄 Orice altceva => redirect spre login */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
