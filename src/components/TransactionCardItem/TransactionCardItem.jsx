@@ -11,7 +11,7 @@ import {
 import { LuPencil } from 'react-icons/lu';
 import { deleteTransactionThunk } from '../../redux/transactions/operations';
 import { selectCategories } from '../../redux/transactions/selectors';
-import { refreshUser } from '../../redux/Auth/operations';
+import { refreshUser } from '../../redux/Operations/operations';
 
 
 const TransactionCardItem = ({ data, handleModal, setData }) => {

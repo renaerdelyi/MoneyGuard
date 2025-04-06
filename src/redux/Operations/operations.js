@@ -13,7 +13,9 @@ export const register = createAsyncThunk(
   async (payload, thunkApi) => {
     try {
       const res = await userTransactionsApi.post('/auth/sign-up', payload);
-      setToken(res.data.token);
+      const token = res.data.token;
+      setToken(token);
+      localStorage.setItem('token', token); // ✅ ADĂUGAT
 
       toast.success('Înregistrare reușită!', {
         position: 'top-right',
@@ -32,13 +34,15 @@ export const register = createAsyncThunk(
   }
 );
 
-// 🔓 LOGIN
+
 export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkApi) => {
     try {
       const res = await userTransactionsApi.post('/auth/sign-in', credentials);
-      setToken(res.data.token);
+      const token = res.data.token;
+      setToken(token);
+      localStorage.setItem('token', token); // ✅ ADĂUGAT
 
       const { username } = res.data.user;
       toast.success(`Bine ai revenit, ${username}!`, {
@@ -77,6 +81,7 @@ export const logIn = createAsyncThunk(
     }
   }
 );
+
 
 // 🔐 LOGOUT
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
