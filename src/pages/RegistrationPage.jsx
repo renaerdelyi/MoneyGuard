@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { register } from '../redux/Operations/operations';
 import RegistrationForm from '../components/Forms/RegistrationForm';
-import { Toaster } from 'react-hot-toast';
+import { ToastContainer, toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 import styles from './RegistrationPage.module.css';
 
@@ -13,7 +14,6 @@ const RegistrationPage = () => {
 
   const handleRegistrationSubmit = async (
     values,
-    setNotification,
     setSubmitting
   ) => {
     const { name, email, password } = values;
@@ -26,19 +26,13 @@ const RegistrationPage = () => {
 
     try {
       await dispatch(register(payload)).unwrap();
-      setNotification({
-        message: 'Înregistrare reușită! Te redirecționăm...',
-        type: 'success',
-      });
+      toast.success('Înregistrare reușită! Te redirecționăm...');
 
       setTimeout(() => {
-        navigate('/login'); // sau '/dashboard' dacă vrei direct acolo
+        navigate('/login'); 
       }, 2000);
     } catch (error) {
-      setNotification({
-        message: error || 'Eroare la înregistrare',
-        type: 'error',
-      });
+      toast.error(error?.message || 'Eroare la înregistrare');
     } finally {
       setSubmitting(false);
     }
@@ -46,13 +40,13 @@ const RegistrationPage = () => {
 
   return (
     <div className={styles.pageRegister}>
-      <Toaster />
+         <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
       <RegistrationForm
         onSubmit={handleRegistrationSubmit}
         onSwitchToLogin={() => navigate('/login')}
       />
 
-      {/* Fundal cu efecte */}
+      
       <div className={styles.ellipse16}></div>
       <div className={styles.ellipse18}></div>
       <div className={styles.ellipse14}></div>
