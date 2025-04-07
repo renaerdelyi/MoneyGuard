@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { logoutThunk } from '../Operations/operations';
 
 const initialState = {
   user: null,

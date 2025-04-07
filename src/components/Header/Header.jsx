@@ -4,15 +4,19 @@ import { Link } from 'react-router-dom';
 import useMedia from '../../hooks/useMedia';
 import { useToggle } from '../../hooks/useToggle.jsx';
 import LogOutModal from '../LogOutModal/LogOutModal';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/auth/selectors';
 
 function Header() {
     const { isMobile } = useMedia();
     const { openModal, isOpen, closeModal } = useToggle();
+    const user = useSelector(selectUser);
+const username = user?.username || 'Anonymous';
 
     return (
         <header className={s.header}>
             <div className={s.container}>
-                <Link to="/" className={s.icon_wrap}>
+                <Link to="/dashboard/home" className={s.icon_wrap}>
                     {isMobile ? (
                         <Icon name="icon-logo_mobile" className={s.icon_mob} />
                     ) : (
@@ -21,7 +25,7 @@ function Header() {
                 </Link>
 
                 <ul className={s.wrapper}>
-                    <li>Hello, Anonymous</li>
+                    <li className={s.usernameLi}>Hello, {username} </li>
                     <li className={s.divider} />
                     <li>
                         <div className={s.wrap}>
