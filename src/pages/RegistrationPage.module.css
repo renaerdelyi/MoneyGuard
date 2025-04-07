@@ -24,7 +24,7 @@
       align-items: center;
       width: 100vw;
       height: 100vh;
-      background-image: url("../images/backgroundRegistration/regbg_tabl_@1x.webp");
+      background-image: url("../images/backgroundRegistration/tablet-bg.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -33,19 +33,19 @@
   
   @media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
     .pageRegister {
-      background-image: url("../images/backgroundRegistration/regbg_tabl_@2x.webp");
+      background-image: url("../images/backgroundRegistration/tablet-bg-2x.png");
     }
   }
   
   @media only screen and (min-width: 1280px) {
     .pageRegister {
-      background-image: url("../images/backgroundRegistration/regbg_desk_@1x.webp");
+      background-image: url("../images/backgroundRegistration/desktop-bg.png");
     }
   }
   
   @media only screen and (min-width: 1280px) and (min-resolution: 192dpi) {
     .pageRegister {
-      background-image: url("../images/backgroundRegistration/regbg_desk_@2x.webp");
+      background-image: url("../images/backgroundRegistration/desktop-bg-2x.png");
     }
   }
   

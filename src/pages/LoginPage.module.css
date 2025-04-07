@@ -5,7 +5,7 @@
       align-items: center;
       width: 100vw;
       height: 100vh;
-      background-image: url("../images/backgroundLogin/loginbg_desk_@1x.webp");
+      background-image: url("../images/backgroundLogin/desktop-bg.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -16,20 +16,20 @@
   
   @media only screen and (min-width: 768px) and (min-resolution: 192dpi) {
     .loginPage {
-      background-image: url("../images/backgroundLogin/loginbg_tabl_@2x.webp");
+      background-image: url("../images/backgroundLogin/tablet-bg-2x.png");
       
     }
   }
   
   @media only screen and (min-width: 1280px) {
     .loginPage {
-      background-image: url("../images/backgroundLogin/loginbg_desk_@1x.webp");
+      background-image: url("../images/backgroundLogin/desktop-bg.png");
     }
   }
   
   @media only screen and (min-width: 1280px) and (min-resolution: 192dpi) {
     .loginPage {
-      background-image: url("../images/backgroundLogin/lodinbg_desk_@2x.webp");
+      background-image: url("../images/backgroundLogin/desktop-bg-2x.png");
     }
   }
   
