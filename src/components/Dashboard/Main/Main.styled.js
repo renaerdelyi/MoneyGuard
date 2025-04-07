@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const MainStyled = styled.div`
-  width: auto;
   height: auto;
   display: flex;
   flex-grow: 1;
