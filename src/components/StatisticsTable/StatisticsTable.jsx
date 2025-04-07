@@ -3,25 +3,41 @@ import { useDispatch, useSelector } from 'react-redux';
 import selectSummary from '../../redux/statistics/selectors';
 import { fetchTransSumThunk } from '../../redux/statistics/operations';
 import { coloredCategoriesMap } from '../Chart/Chart';
+import { setTotalBalance } from '../../redux/financeSlice';
 import styles from './StatisticsTable.module.css';
 
 export const formatNumber = number => {
-  return Math.abs(number)
+  return Number(number)
     .toFixed(2)
     .replace(/\d(?=(\d{3})+\.)/g, '$& ');
 };
 
 const StatisticsTable = () => {
   const summary = useSelector(selectSummary);
-
   const dispatch = useDispatch();
 
   const currentMonth = new Date().getMonth() + 1;
   const currentYear = new Date().getFullYear();
 
+  // 1. Fetch statistics
   useEffect(() => {
     dispatch(fetchTransSumThunk({ month: currentMonth, year: currentYear }));
   }, [dispatch, currentMonth, currentYear]);
+
+  // 2. Set total balance in store after summary is updated
+  useEffect(() => {
+    if (
+      summary.incomeSummary !== undefined &&
+      summary.expenseSummary !== undefined
+    ) {
+      const balance = summary.incomeSummary - summary.expenseSummary;
+      if (summary.expenseSummary > summary.incomeSummary) {
+        balance = -Math.abs(balance);
+      }
+     
+      dispatch(setTotalBalance(balance)); 
+    }
+  }, [summary.incomeSummary, summary.expenseSummary, dispatch]);
 
   const periodSummary = summary.categoriesSummary
     ? summary.categoriesSummary
