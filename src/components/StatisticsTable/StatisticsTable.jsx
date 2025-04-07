@@ -30,7 +30,7 @@ const StatisticsTable = () => {
       summary.incomeSummary !== undefined &&
       summary.expenseSummary !== undefined
     ) {
-      const balance = summary.incomeSummary - summary.expenseSummary;
+      let balance = summary.incomeSummary - summary.expenseSummary;
       if (summary.expenseSummary > summary.incomeSummary) {
         balance = -Math.abs(balance);
       }
